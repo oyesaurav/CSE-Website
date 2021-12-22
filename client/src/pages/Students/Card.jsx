@@ -6,7 +6,9 @@ export default function Card({user , index}) {
     return (
      <div className="col-lg-3 col-md-6 col-sm-12 mb-3">
          <div className="curve cards" style={{backgroundImage:`url(${user.photo_url})`,backgroundRrepeat: "no-repeat",
-          backgroundSize:"cover"}}> 
+          backgroundSize: "cover"
+        }}> 
+          
           <div className="footer">
               <div className="connections mb-2">
               <IconContext.Provider value={{color: 'black', size: 30}}>
@@ -37,7 +39,8 @@ export default function Card({user , index}) {
                       <animate to="M0,200 Q80,100 400,200 V150 H0 V50" fill="freeze" begin="dummyRect.mouseout" dur="0.15s" id="bounceOut" />
              </svg>
              <div className="info p-1">
-             <div className="name">{user.name}</div>
+              <div className="name">{user.name}</div>
+              <div className='email'>{user.email.slice(0,7).toUpperCase()}</div>
              <div className="bio">{user.description}</div>
              </div>
           </div>
